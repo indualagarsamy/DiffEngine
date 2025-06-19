@@ -21,6 +21,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install ps command
+          command: apt-get update && apt-get install -y procps
+      - run:
           name: "Restore NuGet Packages"
           working_directory: ./src/DiffEngine.Tests
           command: dotnet restore -p:EnableWindowsTargeting=true
