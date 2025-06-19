@@ -27,7 +27,7 @@ jobs:
       - run:
           name: "Run Tests"
           working_directory: ./src/DiffEngine.Tests
-          command: dotnet test
+          command: dotnet test -p:EnableWindowsTargeting=true
 
 workflows:
   diffengine-ci-pipeline:
