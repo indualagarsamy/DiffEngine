@@ -9,7 +9,7 @@ jobs:
       - run:
           name: Restore
           working_directory: ./src/
-          command: dotnet restore
+          command: dotnet restore -p:EnableWindowsTargeting=true
       - run:
           name: "Build Application"
           working_directory: ./src/
