@@ -13,7 +13,7 @@ jobs:
       - run:
           name: "Build Application"
           working_directory: ./src/
-          command: dotnet build --configuration Release
+          command: dotnet build --configuration Release -p:EnableWindowsTargeting=true
 
   test:
     docker:
