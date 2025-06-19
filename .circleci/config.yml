@@ -9,7 +9,7 @@ jobs:
       - checkout
       - run:
           name: "Build Application"
-          working_directory: src/
+          working_directory: ./src/
           command: dotnet build --configuration Release
   test:
     executor:
@@ -18,11 +18,11 @@ jobs:
       - checkout
       - run:
           name: "Restore NuGet Packages"
-          working_directory: src/
+          working_directory: ./src/
           command: dotnet restore
       - run:
           name: "Run Tests"
-          working_directory: src/
+          working_directory: ./src/
           command: dotnet test
 workflows:
   diffengine-ci-pipeline:
