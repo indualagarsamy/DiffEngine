@@ -23,7 +23,7 @@ jobs:
       - run:
           name: "Restore NuGet Packages"
           working_directory: ./src/DiffEngine.Tests
-          command: dotnet restore
+          command: dotnet restore -p:EnableWindowsTargeting=true
       - run:
           name: "Run Tests"
           working_directory: ./src/DiffEngine.Tests
