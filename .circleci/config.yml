@@ -1,9 +1,8 @@
 version: 2.1
-orbs:
-  windows: circleci/windows@2.2.0
+
 jobs:
   build:
-   docker:
+    docker:
       - image: mcr.microsoft.com/dotnet/sdk:9.0
     steps:
       - checkout
@@ -15,8 +14,9 @@ jobs:
           name: "Build Application"
           working_directory: ./src/
           command: dotnet build --configuration Release
+
   test:
-     docker:
+    docker:
       - image: mcr.microsoft.com/dotnet/sdk:9.0
     steps:
       - checkout
@@ -28,6 +28,7 @@ jobs:
           name: "Run Tests"
           working_directory: ./src/DiffEngine.Tests
           command: dotnet test
+
 workflows:
   diffengine-ci-pipeline:
     jobs:
